@@ -1,5 +1,4 @@
 import "./Header.scss";
-import Button from '../components/Button';
 
 type headerProps = {
     title?: string;

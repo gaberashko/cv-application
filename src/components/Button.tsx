@@ -4,7 +4,7 @@ export type buttonProps = {
     text?: string;
     id?: string;
     type?: "primary" | "secondary";
-    onClick?: (e:React.MouseEvent<Element>) => void;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export default function Button({text, id, type="primary", onClick = () => {}}: buttonProps) {

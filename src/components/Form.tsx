@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 import "./Form.scss";
 import InputField from './InputField';
@@ -61,7 +60,7 @@ const defaultExperienceData: Partial<experienceData> = {
     endDate: "",
 }
 
-export default function Form({title, data, onChange, onSubmit}: {title: string, data:formData, onChange: (data: formData) => void, onSubmit: (e: React.InputEvent<HTMLButtonElement>) => void}) {
+export default function Form({title, data, onChange, onSubmit}: {title: string, data:formData, onChange: (data: formData) => void, onSubmit: (e: React.MouseEvent<HTMLButtonElement>) => void}) {
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>, id?: string): void {
         const newData = {...data};
