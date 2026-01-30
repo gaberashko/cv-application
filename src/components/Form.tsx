@@ -62,7 +62,7 @@ const defaultExperienceData: Partial<experienceData> = {
 
 export default function Form({title, data, onChange, onSubmit}: {title: string, data:formData, onChange: (data: formData) => void, onSubmit: (e: React.MouseEvent<HTMLButtonElement>) => void}) {
 
-    function handleChange(e: React.ChangeEvent<HTMLInputElement>, id?: string): void {
+    function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, id?: string): void {
         const newData = {...data};
         // We do grab an ID here
         console.log(id);

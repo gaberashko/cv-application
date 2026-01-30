@@ -7,7 +7,7 @@ type inputProps = {
     id?: string;
     placeholder?: string;
     required?: boolean;
-    onChange?: (e) => void;
+    onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 };
 
 export default function InputField({type="text", value, label, required = false, id, placeholder, onChange}: inputProps) {
