@@ -1,0 +1,59 @@
+@use "../styles/abstracts/index" as *;
+
+hr {
+    background-color: $brd-color;
+    height:$brd-w;
+    margin: $xs-pd;
+}
+
+section:not(:first-child) {
+    margin-top: $l-pd;
+}
+
+article {
+    margin: $s-pd 0;
+
+    :nth-child(-n+2) {
+        line-height: 1.5;
+    }
+
+    * {
+        display: block;
+        overflow-y: hidden;
+    }
+}
+
+ul {
+    margin-top: $xs-pd;
+
+    li {
+        list-style-position:inside;
+    }
+}
+
+.CV {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    line-height:1.5;
+
+    * {
+        overflow-x:hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.CV__content {
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+    gap: $s-pd;
+    height:auto;
+}
+
+.CV__column--primary {
+    border-right:$brdprim;
+    height:100%;
+}
+
+.CV__column--secondary {
+
+}

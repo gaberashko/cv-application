@@ -1,0 +1,50 @@
+@use "../styles/abstracts/index" as *;
+
+$icon-size: 25px;
+
+footer {
+    box-sizing:border-box;
+    background-color: $footer-prim;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: $s-pd;
+    border-top: $brdprim;
+    gap: $m-pd;
+
+
+    span {
+        display: inline-block;
+        padding: $xxs-pd;
+        background-color: $brd-color;
+        vertical-align:middle;
+        border-radius: 100%;
+        border: $brdprim;
+    }
+
+    a {
+        display: block;
+        padding: $xxs-pd;
+        border-radius: 100%;
+        border: $brdprim;
+    }
+
+    img {
+        display: block;
+        height:$icon-size;
+        width:$icon-size;
+        background-color: transparent;
+    }
+
+    #react-logo {
+        animation: rotate 5s infinite forwards cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    #github-logo {
+        height: calc($icon-size);
+        width: calc($icon-size);
+        display: inline-block;
+        vertical-align:middle;
+    }
+
+}

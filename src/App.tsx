@@ -1,33 +1,35 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './styles/base/_index.scss';
+import Header from './layout/Header';
+import Main from './layout/Main';
+import Footer from './layout/Footer';
+import Card from './components/Card';
+import Form from './components/Form';
+import CV from './components/CV';
+import SidebarButton from './components/SidebarButton';
+import { initialData } from './components/Form';
+import type { formData } from './components/Form';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setFormData] = useState<formData>(initialData);
+  const [previewCV, setPreviewCV] = useState<boolean>(false);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <Header title="CV Generator"/>
+    <SidebarButton text="Edit" onClick={() => setPreviewCV(false)}/>
+    <Main styles={previewCV ? {gridTemplateColumns: "0fr 1fr", justifyContent:"center", justifyItems:"center"} : {}}>
+      <Card hidden={previewCV}>
+          <Form title="CV Info" data={data} onChange={setFormData} onSubmit = {e => {
+            e.preventDefault();
+            setPreviewCV(!previewCV)}}/>
+      </Card>
+      <Card styles={previewCV ? {width: "clamp(200px, 50vw, 800px)"} : {}}>
+        <CV data={data} />
+      </Card>
+    </Main>
+    <Footer />
     </>
   )
 }

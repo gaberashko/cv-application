@@ -1,0 +1,20 @@
+@use "../styles/abstracts/index" as *;
+@use "./Button.scss";
+
+.sidebar {
+    position: fixed;
+    font-size:$l-fnt;
+    z-index:1;
+    min-height:150px;
+    background-color: $acc-prim;
+    color:$fnt-light;
+    border:$brd-w solid $card-bg;
+    border-top-right-radius: $brd-r;
+    border-bottom-right-radius: $brd-r;
+    transform:translateX(-80%);
+    transition: transform $trans-d $trans-tf;
+
+    &:hover, &:focus-visible {
+        transform:translateX(-20%);
+    }
+}
