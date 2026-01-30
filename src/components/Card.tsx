@@ -4,6 +4,7 @@ type cardProps = {
     hidden?: boolean;
     children?: React.ReactNode;
     styles?: React.CSSProperties;
+    ref?: React.RefObject<null>;
 }
 
 export default function Card({children, hidden, styles}: cardProps) {

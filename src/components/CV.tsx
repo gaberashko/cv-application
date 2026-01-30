@@ -3,11 +3,12 @@ import type { formData } from "./Form"
 
 type cvProps = {
     data: formData;
+    contentRef?: React.RefObject<null>
 }
 
-export default function CV({data}: cvProps) {
+export default function CV({data, contentRef}: cvProps) {
     return (
-        <div className="CV">
+        <div className="CV" ref={contentRef}>
             <div className="CV__header">
                 <h1>{data.firstName + " " + data.lastName}</h1>
             </div>

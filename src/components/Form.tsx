@@ -165,7 +165,7 @@ export default function Form({title, data, onChange, onSubmit}: {title: string, 
                 e.preventDefault();
                 addExperience();}}/>
         </Accordion>
-        <Button id="submit" text="Export" onClick={onSubmit}/>
+        <Button id="submit" text="Preview" onClick={onSubmit}/>
     </form>)
 }
 
