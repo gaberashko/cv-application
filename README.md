@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# :boom: CV Generator :anchor:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+    <img src="src/assets/images/website-1.png" width=75%>
+</p>
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [About](#about)
+- [Website Demo](#installation--website-demo)
+- [Features](#features)
+    - [PDF Exporting](#pdf-exporting)
+    - [Responsive UI Animations](#responsive-ui-animations)
+- [Tech Stack](#tech-stack)
+- [Gallery](#gallery)
+- [Credit](#credit)
 
-## React Compiler
+## About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The CV Generator is the the first React + TypeScript + Vite project I've created. This project was created as a benchmark of my self-directed React study to emphasize fundamental React functionalities of reusable component design, managing state between components, maintaining responsive, mobile-friendly UI design, and practicing industry-standard type-safety with React in TypeScript. T
 
-## Expanding the ESLint configuration
+<img src="src/assets/images/placement.png" width="75%">
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Installation / Website Demo
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The website is hosted on CloudFlare, and can be accessed below:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+[CV Generator](https://cv-application-18c.pages.dev)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Otherwise, the project's functionality can be tested through the following steps:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Download the repository.
+2. Extract the repository.
+3. Open the folder in VSCode, and run `npm install`.
+4. Then, run `npx webpack serve`.
+5. Locate the `http://localhost:8080/` output in the terminal.
+6. Hold <kbd>Ctrl</kbd> and click on `http://localhost:8080/`, and the hosted deployment version will open.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Features
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This Battleship experience includes several polished features to make combat and ship placement engaging and elegant. Several days were put into creating little design details to accentuate the terminal theme of the website! Pulsating board lights, text-based ship preview rendering, a reusable modal-component developed from scratch with fluid animation, and modified sound effects during combat keep the experience wholly immersive!
+
+### PvP Mode
+
+The game supports local pass-and-play combat! Two people in proximity can take turns setting up their respective board, and launching an attack on the other! Transition between turns is seamless, as the board's obfuscation allows the game to be passed along without revealing ship positions to the opponent.
+
+<img src="src/assets/images/swap.png" width="75%">
+
+### AI Mode
+
+The game also supports a player-vs-AI combat system. One person can set up their board, and select an AI difficulty (e.g. easy, medium, hard) to battle against. The AI is equipped with three difficulties that alter its guessing strategy, and utilization of game history/an internal memory system to determine the next best attack. The AI will generate a random board setup, and can place ships both horizontally and vertically.
+
+<img src="src/assets/images/attack.png" width="75%">
+
+### Drag-and-Drop Placement
+
+<img src="src/assets/images/placement.png" width="75%">
+
+This Battleship experience allows players to set up their board with stylish, responsive drag-and-drop placement. Players can select a ship off of the ship container, and drag it to the spot they wish to place it. The board provides continuous placement preview feedback indicating whether or not the ship can be placed in the current position. Players may adjust ship rotation by pressing the `r` key while dragging the ship. Ships may be picked up off of the board and moved to a new spot after initial placement.
+
+### Responsive Terminal UI
+
+<img src="src/assets/images/winner.png" width="75%">
+
+The site touts a retro computer-terminal aesthetic reminiscent of older DOS machines. The site was developed with reusable, scalable, responsive web-components created from scratch with HTML and SCSS. The site's layout can handle both desktop screens and mobile devices, and adjusts fluidly to changes in window sizing.
+
+## Tech Stack
+
+- 🛠️ **HTML5** - Used for fundamental web architecture.
+- ⚙️ **TypeScript** - Used for modular Ship, Player, Board, GameController, and GameRenderer classes.
+- 🎨 **SCSS** - Used to develop modular CSS rules to easily maintain site aesthetic.
+- 🧱 **Webpack** - For module bundling and asset management.
+- 💾 **sessionStorage API** - Used to handle and store persistent game and board data used by the Player, GameController, and GameRenderer classes.
+- 🚩 **Jest** - Unit testing of modular components.
+
+## Credit
+
+Sound effects used in Battleship were provided from the royalty-free sound effect archive of [Pixabay](https://pixabay.com/), and modified with [Audacity](https://www.audacityteam.org). Modified SVGs for the crosshair, attack, and ship icons were provided by [SVGRepo](https://www.svgrepo.com).
+
+### Enjoy! :white_check_mark:
+
+[Back to Top](#table-of-contents)

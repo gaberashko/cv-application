@@ -1,19 +1,19 @@
-@use "../abstracts/variables" as *;
+@use "../abstracts/index" as *;
 
 * {
     color: $fnt-dark;
 }
 
 h1 {
-    font-size: $xl-fnt;
+    @include responsive(font-size, (xs: $l-fnt, md: $xl-fnt));
 }
 
 h2 {
-    font-size: $l-fnt;
+    @include responsive(font-size, (xs:$m-fnt, md:$l-fnt));
 }
 
 h3 {
-    font-size: $m-fnt;
+    @include responsive(font-size, (xs:$s-fnt, md:$m-fnt));
 }
 
 h4, h5 {
@@ -21,7 +21,7 @@ h4, h5 {
 }
 
 p, label {
-    font-size:$s-fnt;
+    @include responsive(font-size, (xs: $s-fnt, md:$s-fnt));
 }
 
 b {

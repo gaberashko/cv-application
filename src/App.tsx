@@ -32,7 +32,7 @@ function App() {
             e.preventDefault();
             setPreviewCV(!previewCV)}}/>
       </Card>
-      <Card styles={previewCV ? {width: "clamp(200px, 50vw, 800px)"} : {}}>
+      <Card styles={previewCV ? {width: "clamp(200px, 90vw, 800px)"} : {}}>
         <CV data={data} contentRef={contentRef}/>
       </Card>
     </Main>

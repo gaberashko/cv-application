@@ -28,6 +28,7 @@ input, textarea {
 .inputField {
     margin:$s-pd 0;
     display: flex;
+    @include responsive(flex-direction, (xs: column, md: row));
     align-items:center;
     justify-content:space-between;
 }
