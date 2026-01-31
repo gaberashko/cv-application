@@ -6,6 +6,18 @@ type cvProps = {
     contentRef?: React.RefObject<null>
 }
 
+function formatDate(str: string): string {
+    if (str === "") return str;
+    
+    const date = new Date(str);
+    console.log("Date object created:", date);
+
+    const formattedDate: string = date.toLocaleString("en-US", {month: "long", year: "numeric"});
+    
+
+    return formattedDate;
+}
+
 export default function CV({data, contentRef}: cvProps) {
     return (
         <div className="CV" ref={contentRef}>
@@ -21,7 +33,7 @@ export default function CV({data, contentRef}: cvProps) {
                             <article id={`education${i}`}>
                                 <h3><b>{ed.degree + (ed.degree ? " in " : "") + ed.major}</b></h3>
                                 <p>{ed.school}</p>
-                                <p><i>{ed.startDate + ((ed.startDate || ed.endDate) ? " - " : "") + ed.endDate}</i></p>
+                                <p><i>{formatDate(ed.startDate) + ((ed.startDate || ed.endDate) ? " - " : "") + formatDate(ed.endDate)}</i></p>
                             </article>
                         )}
                     </section>
@@ -31,7 +43,7 @@ export default function CV({data, contentRef}: cvProps) {
                             <article id={`experience${i}`}>
                                 <h3><b>{ex.position}</b></h3>
                                 <p>{ex.company}</p>
-                                <p><i>{ex.startDate + ((ex.startDate || ex.endDate) ? " - " : "") + ex.endDate}</i></p>
+                                <p><i>{formatDate(ex.startDate) + ((ex.startDate || ex.endDate) ? " - " : "") + formatDate(ex.endDate)}</i></p>
                                 <ul>
                                     {ex.responsibilities != "" ? ex.responsibilities.split(/\n/).map(line => (<li>{line}</li>)): null}
                                 </ul>

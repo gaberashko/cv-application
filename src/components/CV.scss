@@ -14,11 +14,10 @@ article {
     margin: $s-pd 0;
 
     :nth-child(-n+2) {
-        line-height: 1.5;
+        line-height: 1.2;
     }
 
     * {
-        display: block;
         overflow-y: hidden;
     }
 }
@@ -32,13 +31,27 @@ ul {
 }
 
 .CV {
-    overflow-x: hidden;
+    overflow-x: visible;
     text-overflow: ellipsis;
+    padding:$m-pd;
     line-height:1.5;
 
+
     * {
-        overflow-x:hidden;
+        overflow-x:visible;
         text-overflow: ellipsis;
+    }
+
+    h1 {
+        font-size:$xxl-fnt;
+    }
+
+    h2 {
+        font-size:$xl-fnt;
+    }
+
+    h3 {
+        font-size: $l-fnt;
     }
 }
 

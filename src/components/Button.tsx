@@ -5,10 +5,11 @@ export type buttonProps = {
     id?: string;
     type?: "primary" | "secondary";
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    styles?: React.CSSProperties;
 }
 
-export default function Button({text, id, type="primary", onClick = () => {}}: buttonProps) {
+export default function Button({text, id, type="primary", onClick = () => {}, styles}: buttonProps) {
     return (
-        <button id={id} className={`button--${type}`} onClick={onClick}>{text}</button>
+        <button id={id} className={`button--${type}`} onClick={onClick} style={styles}>{text}</button>
     )
 }

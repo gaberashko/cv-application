@@ -15,7 +15,10 @@ export default function InputField({type="text", value, label, required = false,
         <div className="inputField">
             <label htmlFor={id}>{label}{required && <sup className="requiredField">*</sup>}</label>
             {type === "textarea" ? <textarea id={id} placeholder={placeholder} required={required} value={value} onChange={onChange}></textarea>
-            : <input id={id} type={type} pattern={type === "tel" ? "[0-9]{3}-[0-9]{3}-[0-9]{4}" : undefined}
+
+            : 
+            
+            <input id={id} type={type} pattern={type === "tel" ? "[0-9]{3}-[0-9]{3}-[0-9]{4}" : undefined}
              placeholder={placeholder} required={required} value={value} onChange={onChange} />}
         </div>
     )

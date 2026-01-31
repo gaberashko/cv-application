@@ -1,13 +1,13 @@
 @use "../styles/abstracts/index" as *;
 
 main {
-    transition: all 1s $trans-tf;
+    transition: grid-template-columns 1s $trans-tf;
     display: grid;
     grid-template-columns:2fr 3fr;
     grid-column-gap: $m-pd;
     padding: $xs-pd $s-pd;
-    min-height:80vh;
     margin: 0;
+    min-height:80vh;
 }
 
 .centered {

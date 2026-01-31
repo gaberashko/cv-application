@@ -60,6 +60,7 @@ const defaultExperienceData: Partial<experienceData> = {
     endDate: "",
 }
 
+
 export default function Form({title, data, onChange, onSubmit}: {title: string, data:formData, onChange: (data: formData) => void, onSubmit: (e: React.MouseEvent<HTMLButtonElement>) => void}) {
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, id?: string): void {

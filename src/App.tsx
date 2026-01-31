@@ -25,7 +25,7 @@ function App() {
     <Header title="CV Generator">
       {previewCV && <Button text="Export" onClick={reactToPrintFn}/>}
     </Header>
-    <SidebarButton text="Edit" onClick={() => setPreviewCV(false)}/>
+    <SidebarButton text="Edit" onClick={() => setPreviewCV(false)} hidden={!previewCV}/>
     <Main styles={previewCV ? {gridTemplateColumns: "0fr 1fr", justifyContent:"center", justifyItems:"center"} : {}}>
       <Card hidden={previewCV} ref={contentRef}>
           <Form title="CV Info" data={data} onChange={setFormData} onSubmit = {e => {
