@@ -11,7 +11,6 @@ import FloatContainer from './components/FloatContainer';
 import FloatButton from './components/FloatButton';
 import { initialData } from './components/Form';
 import type { formData } from './components/Form';
-import Button from './components/Button';
 
 
 function App() {
