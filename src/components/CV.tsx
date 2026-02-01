@@ -28,7 +28,7 @@ export default function CV({data, contentRef}: cvProps) {
             <div className="CV__content">
                 <div className="CV__column--primary" style={(data.email || data.phone) ? {borderRight:"2px solid", height:"100%" } : {height:0}}>
                     <section id="education" className="CV__education">
-                        {data.educations.length > 0 && <h2>Education</h2>}
+                        {data.educations.length > 0 && <><h2>Education</h2><hr></hr></>}
                         {data.educations.map((ed, i) =>
                             <article id={`education${i}`}>
                                 <h3><b>{ed.degree + (ed.degree ? " in " : "") + ed.major}</b></h3>
