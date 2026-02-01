@@ -1,5 +1,7 @@
 @use "../styles/abstracts/index" as *;
 
+$brd-w: 2px;
+
 .button {
     transition-property: color, border-color, filter, transform;
     transition-duration: 150ms;
@@ -22,7 +24,6 @@
 .button--primary {
     @extend .button;
     outline-color: $acc-prim;
-    border-width:$brd-w;
     background-color: $acc-prim;
     color: $fnt-light;
 
@@ -34,7 +35,6 @@
 .button--secondary {
     @extend .button;
     outline: none;
-    border-width:$brd-w;
     border-color:$acc-prim;
     background-color: white;
     color: $fnt-dark;

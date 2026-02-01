@@ -24,7 +24,7 @@ $fnt-light: #e3e3e5;
 // ==========================
 // EFFECTS & SHADOWS
 // ==========================
-$card-bord: 2px solid $brd-color;
+$card-bord: 1px solid $brd-color;
 $shad: 2px 2px 10px $shad-color;
 
 
@@ -59,7 +59,7 @@ $xxl-fnt: 2.6rem;
 
 
 // Border variables
-$brd-w: 2px; // Width
+$brd-w: 1px; // Width
 $brd-r: 12px; // Radius
 $brdprim: $brd-w solid; // Primary border
 

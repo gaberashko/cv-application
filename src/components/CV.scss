@@ -1,41 +1,54 @@
 @use "../styles/abstracts/index" as *;
 
-hr {
-    background-color: $brd-color;
-    height:$brd-w;
-    margin: $xs-pd;
-}
-
 section:not(:first-child) {
-    margin-top: $l-pd;
+    margin-top: $s-pd;
 }
 
 article {
-    margin: $s-pd 0;
+    display: grid;
+    grid-template-columns:1fr auto;
+    line-height:1.1;
+    margin: 0 $xs-pd;
 
-    :nth-child(-n+2) {
-        line-height: 1.2;
-    }
-
-    * {
-        overflow-y: hidden;
+    &:not(:last-child) {
+        margin-bottom: $xs-pd;
     }
 }
 
-ul {
-    margin-top: $xs-pd;
 
-    li {
-        list-style-position:inside;
-    }
+ul {
+    margin-top: $xxs-pd;
+    padding-left:$s-pd;
+    line-height:1.2;
+    list-style-position:outside;
 }
 
 .CV {
+    font-family:Georgia, 'Times New Roman', Times, serif;
     overflow-x: visible;
     text-overflow: ellipsis;
-    padding:$m-pd;
-    line-height:1.5;
+    padding:$l-pd $m-pd;
+    max-width: 800px;
 
+    .CV__header {
+        text-align:center;
+    }
+
+    .CV__contact {
+        display: flex;
+        justify-content: center;
+        gap: $m-pd;
+    }
+
+    .justify-end {
+        justify-self:end;
+    }
+    
+    .CV__skills {
+        article {
+            margin-bottom: 0;
+        }
+    }
 
     * {
         overflow-x:visible;
@@ -44,25 +57,29 @@ ul {
 
     h1 {
         font-size:$xxl-fnt;
+        font-weight: normal;
     }
 
     h2 {
-        font-size:$xl-fnt;
+        font-size:$m-fnt;
+        font-weight: normal;
     }
 
     h3 {
-        font-size: $l-fnt;
+        font-size: $s-fnt;
     }
-}
 
-.CV__content {
-    display:grid;
-    grid-template-columns: 3fr 1fr;
-    gap: $s-pd;
-    height:auto;
-}
+    p {
+        font-size:$s-fnt;
+    }
 
-.CV__column--primary {
-    border-right:$brdprim;
-    height:100%;
+    ul {
+        grid-column: 1/3;
+    }
+
+    hr {
+        background-color: $fnt-dark;
+        height:1px;
+        margin: $xxs-pd 0;
+    }
 }

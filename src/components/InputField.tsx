@@ -11,6 +11,7 @@ type inputProps = {
 };
 
 export default function InputField({type="text", value, label, required = false, id, placeholder, onChange}: inputProps) {
+    console.log(value?.toString());
     return (
         <div className="inputField">
             <label htmlFor={id}>{label}{required && <sup className="requiredField">*</sup>}</label>

@@ -7,7 +7,8 @@ import Footer from './layout/Footer';
 import Card from './components/Card';
 import Form from './components/Form';
 import CV from './components/CV';
-import SidebarButton from './components/SidebarButton';
+import FloatContainer from './components/FloatContainer';
+import FloatButton from './components/FloatButton';
 import { initialData } from './components/Form';
 import type { formData } from './components/Form';
 import Button from './components/Button';
@@ -18,15 +19,17 @@ function App() {
   const [previewCV, setPreviewCV] = useState<boolean>(false);
 
   const contentRef = useRef(null);
-  const reactToPrintFn = useReactToPrint({ contentRef });
+  const reactToPrintFn = useReactToPrint({ documentTitle: `${data.firstName}_${data.lastName}_Resume`,contentRef });
 
   return (
     <>
     <Header title="CV Generator">
-      {previewCV && <Button text="Export" onClick={reactToPrintFn}/>}
     </Header>
-    <SidebarButton text="Edit" onClick={() => setPreviewCV(false)} hidden={!previewCV}/>
     <Main styles={previewCV ? {gridTemplateColumns: "0fr 1fr", justifyContent:"center", justifyItems:"center"} : {}}>
+      <FloatContainer>
+        <FloatButton type="secondary" imgSrc="public/pencil.svg" alt="Edit CV" onClick={() => setPreviewCV(false)} hidden={!previewCV}/>
+        <FloatButton type="primary" imgSrc="public/download.svg" alt="Edit CV" onClick={reactToPrintFn} hidden={!previewCV}/>
+      </FloatContainer>
       <Card hidden={previewCV} ref={contentRef}>
           <Form title="CV Info" data={data} onChange={setFormData} onSubmit = {e => {
             e.preventDefault();
