@@ -26,8 +26,8 @@ function App() {
     </Header>
     <Main styles={previewCV ? {gridTemplateColumns: "0fr 1fr", justifyContent:"center", justifyItems:"center"} : {}}>
       <FloatContainer>
-        <FloatButton type="secondary" imgSrc="public/pencil.svg" alt="Edit CV" onClick={() => setPreviewCV(false)} hidden={!previewCV}/>
-        <FloatButton type="primary" imgSrc="public/download.svg" alt="Edit CV" onClick={reactToPrintFn} hidden={!previewCV}/>
+        <FloatButton type="secondary" imgSrc="pencil.svg" alt="Edit CV" onClick={() => setPreviewCV(false)} hidden={!previewCV}/>
+        <FloatButton type="primary" imgSrc="download.svg" alt="Edit CV" onClick={reactToPrintFn} hidden={!previewCV}/>
       </FloatContainer>
       <Card hidden={previewCV} ref={contentRef}>
           <Form title="CV Info" data={data} onChange={setFormData} onSubmit = {e => {
