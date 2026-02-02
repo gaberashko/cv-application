@@ -16,7 +16,7 @@
 
 ## About
 
-The CV Generator is the the first React + TypeScript + Vite project I've created. This project was created as a benchmark of my self-directed React study to emphasize fundamental React functionalities of reusable component design, managing state between components, maintaining responsive, mobile-friendly UI design, and practicing industry-standard type-safety with React in TypeScript. The site allows users to input applicable hiring information, such as contact info, education info, and work experience information. The site formats this information into a CV-style layout, and users can preview, download, and print their generated CV.
+The CV Generator is the the first React + TypeScript + Vite project I've created. This project was created as a benchmark of my self-directed React study to emphasize fundamental React functionalities of reusable component design, managing state between components, maintaining responsive, mobile-friendly UI design, and practicing industry-standard type-safety with React in TypeScript. The site allows users to input applicable and practical information, such as contact info, education info, work experience, projects, and industry skills. The site formats this information into a professional CV-style layout, and users can preview, download, and print their generated CV.
 
 <img src="public/website1.png" width="75%">
 
@@ -39,7 +39,7 @@ Otherwise, the project's functionality can be tested through the following steps
 
 ### PDF Exporting
 
-A generated resume isn't any good if you can't download it. The CV Generator supports the exporting of generated resumes via PDF download, or print using the react-to-print library. The exported PDF includes proper indentation, and page margin formatting to make the resume look clean and professional. Users can input general info, education info, and work experience, and all entered information will be logically formatted into a comprehensible structure.
+A generated resume isn't any good if you can't download it. The CV Generator supports the exporting of generated resumes via PDF download, or print using the react-to-print library. The exported PDF includes proper indentation, and page margin formatting to make the resume look clean and professional. Users can input all of their relevant experience, and all entered information will be logically formatted into a comprehensible, professional structure.
 
 <img src="public/website2.png" width="75%">
 
