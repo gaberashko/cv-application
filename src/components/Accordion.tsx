@@ -7,9 +7,10 @@ type accordionProps = {
     title?: string;
     children?: React.ReactNode | React.ReactNode[];
     open?: boolean
+    img?: string
 }
 
-export default function Accordion({title = "Title", children, open = false}: accordionProps) {
+export default function Accordion({title = "Title", children, img, open = false}: accordionProps) {
     const accordionContent = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState<boolean>(open);
     const [contentHeight, setContentHeight] = useState("0px");
@@ -34,6 +35,7 @@ export default function Accordion({title = "Title", children, open = false}: acc
                 if (e.repeat) return;
                 if (e.key == "Enter" || e.key == " ") toggle();}}>
                 <h2 draggable="false"><span className="caret">&gt;</span>{title}</h2>
+                {img && <img className="accordion__icon" src={img} alt="" />}
             </div>
             <div className="accordion__content" ref={accordionContent} style={{maxHeight: `${contentHeight}`}}>
                 {children}

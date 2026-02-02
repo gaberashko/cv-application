@@ -11,7 +11,6 @@ header {
     @include responsive(padding, (xs: $s-pd $m-pd, md: $s-pd $xxl-pd));
     gap:$m-pd;
     z-index:1;
-    border-bottom: $brdprim;
 
     h1 {
         user-select: none;

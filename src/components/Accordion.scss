@@ -3,6 +3,8 @@
 $caret-color: #616161;
 $accordion-bg: #dedcdc;
 $accordion-bord: 2px solid $acc-prim;
+$icon-size: 20px;
+$icon-brd-r: 50%;
 
 .caret {
     color:$caret-color;
@@ -19,6 +21,9 @@ $accordion-bord: 2px solid $acc-prim;
 
     .accordion__header {
         cursor:pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         h2 {
             user-select:none;
@@ -27,6 +32,7 @@ $accordion-bord: 2px solid $acc-prim;
         span {
             display: inline-block;
             user-select:none;
+            vertical-align:text-top;
             margin-right: $xs-pd;
             transition: transform $trans-d $trans-tf;
             transform-origin: 50% 50%;
@@ -38,6 +44,15 @@ $accordion-bord: 2px solid $acc-prim;
                 transform:translateX(-5px);
             }
         }
+    }
+
+    .accordion__icon {
+        background-color: $bg-prim;
+        height: calc($icon-size + $m-pd);
+        padding:$xs-pd;
+        border-radius: $icon-brd-r;
+        overflow:visible
+
     }
 
     .accordion__content {

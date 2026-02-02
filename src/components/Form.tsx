@@ -59,7 +59,7 @@ const initialData: formData = {
     firstName: "John",
     lastName: "Smith",
     email: "JohnSmith83@gmail.com",
-    phone: "582-398-6845",
+    phone: "(582) 398-6845",
     educations: [
         {
             id:"edex1",
@@ -259,7 +259,7 @@ export default function Form({title, data, onChange, onSubmit}: {title: string, 
     return (
     <form>
         <h1>{title}</h1>
-        <Accordion title="General info">
+        <Accordion title="General info" img="person.svg">
             <InputField id="firstName" label="First Name" value={data.firstName}
             placeholder={initialData.firstName} required onChange={handleChange}/>
             <InputField id="lastName" label="Last Name" value={data.lastName}
@@ -269,7 +269,7 @@ export default function Form({title, data, onChange, onSubmit}: {title: string, 
             <InputField id="phone" label="Phone Number" type="tel" value={data.phone}
             placeholder={initialData.phone} required onChange={handleChange}/>
         </Accordion>
-        <Accordion title="Education">
+        <Accordion title="Education" img="graduation-cap.svg">
             {data.educations.map((ed, i) =>  
                 <fieldset className="educationSection">
                     <legend>Education {i+1}</legend>
@@ -294,7 +294,7 @@ export default function Form({title, data, onChange, onSubmit}: {title: string, 
                 e.preventDefault();
                 addEducation();}}/>
         </Accordion>
-        <Accordion title="Work Experience">
+        <Accordion title="Work Experience" img="employee.svg">
             {data.experiences.map((ex, i) =>  
                <fieldset className="experienceSection">
                     <legend>Experience {i+1}</legend>
@@ -319,7 +319,7 @@ export default function Form({title, data, onChange, onSubmit}: {title: string, 
                 e.preventDefault();
                 addExperience();}}/>
         </Accordion>
-        <Accordion title="Projects">
+        <Accordion title="Projects" img="hammer.svg">
             {data.projects.map((proj, i) =>  
                <fieldset className="projectSection">
                     <legend>Project {i+1}</legend>
@@ -342,7 +342,7 @@ export default function Form({title, data, onChange, onSubmit}: {title: string, 
                 e.preventDefault();
                 addProject();}}/>
         </Accordion>
-        <Accordion title="Skills">
+        <Accordion title="Skills" img="star.svg">
                {data.skills.map((s, i) =>  
                 <fieldset className="skillSection">
                     <legend>Skill {i+1}</legend>
